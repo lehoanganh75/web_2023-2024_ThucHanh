@@ -1,0 +1,112 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #99cdfd;
+    font-size: 18px;
+}
+
+.container{
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 8px;
+}
+.logo{
+    text-align: center;
+}
+.container header{
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+}
+.container p{
+    text-align: center;
+}
+
+.form .input-box{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.input-box .first-name{
+    margin-right: 80px;
+}
+
+.input-address .address-1{
+    margin-right: 80px;
+}
+.input-address{
+    margin-bottom: 10px;
+}
+.input-box1 .input-city{
+    margin-right: 130px;
+}
+.input-box1 .lbCountry{
+    margin-right: 100px;
+}
+.input-box1{
+    margin-bottom: 20px;
+}
+
+.dropdown .lbProduct{
+    margin-right: 105px;
+}
+
+.date-input{
+    margin: 20px 0;
+}
+.date-input .date-purchased{
+    margin-right: 50px;
+}
+
+.seri-input .serial{
+    margin-right: 105px;
+}
+.seri-input{
+    margin-bottom: 20px;
+}
+
+.use-for .used-for{
+    margin-right: 100px;
+}
+.use-for .home{
+    margin-right: 50px;
+}
+
+.bus{
+    margin-left: 176px;
+}
+
+.other{
+    margin-left: 36px;
+}
+.system-infor{
+    font-size: 17px;
+}
+
+.system .unix{
+    margin-left: 20px;
+}
+
+.systeam .mac{
+    margin-left: 206px;
+}
+
+.systeam .other{
+    margin-left: 13px;
+}
+
+.reply .cmt{
+    float: left;
+    margin-right: 80px;
+}
+
+.button{    
+    margin-top: 10px;
+    text-align: center;
+}

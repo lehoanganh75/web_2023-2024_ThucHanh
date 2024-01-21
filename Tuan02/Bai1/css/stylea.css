@@ -1,0 +1,42 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 860px;
+    height: 380px;
+    margin-top: 1em;
+    border: 2px solid #77325a;
+}
+
+.header h1 {
+    text-align: center;
+    padding: 15px 0;
+    font-style: italic;
+    color: brown;
+    text-shadow: 0px 10px 12px #77325a;
+    border-bottom: 2px solid #77325a;
+}
+
+.header>a {
+    text-decoration: none;
+    padding-left: 50px;
+}
+
+.content>h2 {
+    color: brown;
+    background-color: #f5f4de;
+}
+
+.content a {
+    color: red;
+}
+
+.content>a {
+    font-weight: 700;
+}
+
+.content>ul {
+    padding-left: 40px;
+}

@@ -1,0 +1,28 @@
+.content fieldset{
+    width: 45%;
+}
+
+.to{
+    margin-right: 60px;
+}
+.content .space{
+    margin: 10px 0;
+}
+.email{
+    margin-right: 5px;
+}
+
+.mess {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.file{
+    margin: 10px 0;
+}
+.mess .messa{
+    margin-right: 23px;
+}
+.letter .new{
+    margin-right: 76px;
+}
