@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* header */
+
+#wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #6dc6ed;
+    position: relative;
+}
+
+#wrapper .header {
+    width: 100%;
+    height: 60px;
+    border-bottom: 4px dotted #fff;
+}
+
+.header li {
+    list-style: none;
+    display: inline-block;
+}
+
+.header li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 0 24px;
+    line-height: 60px;
+    font-size: 17px;
+}
+
+.header h1 {
+    position: absolute;
+    top: 0;
+    right: 24px;
+    line-height: 56px;
+    color: #fff;
+    text-shadow: 0 0 9px blue;
+    font-size: 36px;
+}
+
+
+/* content */
+
+.content {
+    height: 600px;
+    display: flex;
+    border-bottom: 4px dotted #fff;
+}
+
+.left {
+    width: 700px;
+}
+
+.left .infor {
+    color: #fff;
+    font-size: 18px;
+}
+
+.infor {
+    padding-left: 10px;
+}
+
+.infor h1 {
+    margin: 20px 0;
+}
+
+.form {
+    margin-left: 100px;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+}
+
+.form .form-right {
+    padding-left: 20px;
+}
+
+.form-right button {
+    border: 1px dotted #000;
+    width: 50px;
+    border-radius: 5px;
+}
+.form-right input {
+    border-radius: 3px;
+}
+.form-right select {
+    border-radius: 3px;
+    width: 50px;
+}
+.form-right input , .form-right textarea{
+    border-radius: 4px;
+}
+.right {
+    width: 821px;
+    color: #fff;
+}
+.right img {
+    padding-top: 40px;
+    width: 600px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.right .textT{
+    margin-left: 200px;
+    display: flex;
+    color: blue;
+    font-size: 43px;
+    font-weight: 700;
+    text-shadow: 6px 3px 3px blue;
+}
+
+.right .textT1{
+    margin-left: 220px;
+    display: flex;
+    color: blue;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Footeer */
+
+
+.footer > p{
+    padding-top: 25px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+.footer p span{
+    font-style: italic;
+}
