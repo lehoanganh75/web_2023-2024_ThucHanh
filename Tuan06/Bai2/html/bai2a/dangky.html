@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .border {
+            border: 1px solid grey; 
+            padding: 10px; 
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="border col-md-6">
+            <table>
+                <tr>
+                    <th colspan="2" class="text-center border" style="color: pink; font-weight: bold;">THÔNG TIN ĐĂNG KÝ</th>
+                </tr>
+                <tr>
+                    <td class="border p-2">
+                        <label for="HoTen" style="padding-right: 20px;">Họ tên</label>
+                    </td>
+                    <td class="border p-2">
+                        <input type="text" id="HoTen" name="HoTen">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border p-2">
+                        <label for="Password" style="padding-right: 2px;">Mật khẩu</label>
+                    </td>
+                    <td class="border p-2">
+                        <input type="password" id="Password" name="Password">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border p-2"> </td>
+                    <td colspan="2" class="border p-2 text-center">
+                        <input type="submit" value="Nhập" onclick="dangky()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function dangky(){
+            const HoTen = document.getElementById("HoTen").value;
+            const Password = document.getElementById("Password").value;
+            
+            sessionStorage.setItem("HoTen", HoTen);
+            sessionStorage.setItem("Password", Password);
+
+            window.location.href = "../html/thongtin.html";
+        }   
+    </script>
+</body>
+</html>

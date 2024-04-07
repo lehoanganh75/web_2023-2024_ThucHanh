@@ -1,0 +1,9 @@
+td, tr, table{
+	text-align: center;
+	border: 1px solid black;
+}
+#dssv{
+	color: pink;
+	font-weight: bold;
+	border-color: pink;
+}

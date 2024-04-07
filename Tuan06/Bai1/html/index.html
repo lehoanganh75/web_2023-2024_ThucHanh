@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bai 1</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<script>
+			let mssv = prompt("Nhap ma so SV");
+			let hoTen = prompt("Nhap ho ten SV");
+			let lop = prompt("Nhap lop SV");
+			document.write("<table>");
+				document.write("<tr>");		
+					document.write("<td colspan='3' id='dssv'>DANH SACH SINH VIEN</td>");
+				document.write("</tr>");
+
+				document.write("<tr>");		
+					document.write("<td>MSSV</td>");
+					document.write("<td>Ten</td>");
+					document.write("<td>Lop</td>");
+				document.write("</tr>");
+
+				document.write("<tr>");		
+					document.write("<td>"+ mssv +"</td>");
+					document.write("<td>"+ hoTen +"</td>");
+					document.write("<td>"+ lop +"</td>");
+				document.write("</tr>");
+			document.write("</table>");
+		</script>
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bai 2e</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+<body>
+	<div class="container">
+		<div class="col-md-8">
+			<div class="row" id="images">
+				<img src="../img/b1.jpg" alt="img" id="img" class="col-md-5 m-3">
+			</div>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<input type="button" value="Play" name="btn" id="btn" class="col-md-1 m-3" onclick="changeImages()">
+				<input type="button" value="Stop" name="stop" id="stop" class="col-md-1 m-3" onclick="stopChange()">
+			</div>
+		</div>
+	</div>
+	<script>
+		let imageList = [
+			"../img/b1.jpg",
+			"../img/b2.jpg",
+			"../img/b3.jpg",
+			"../img/b4.jpg",
+			"../img/b5.jpg",
+			"../img/b6.jpg",
+			"../img/b7.jpg",
+			"../img/b8.jpg",
+			"../img/b9.jpg",
+			"../img/b10.jpg"
+		];
+	
+		let image = document.getElementById("img");
+		let count = 0;
+		let idq;
+	
+		function changeImages() {
+			image.src = imageList[count];
+			count = (count + 1) % imageList.length; 
+			idq = setTimeout(changeImages, 1000);
+		}
+	
+		function stopChange() {
+			clearTimeout(idq);
+		}
+	</script>
+</body>
+</html>

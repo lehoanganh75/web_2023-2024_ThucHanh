@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .border {
+            border: 1px solid grey; 
+            padding: 10px; 
+            width: 500px;
+        }
+        .row-content {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="border col-md-6">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h3 class="text-center border m-3 p-2" style="color: pink; font-weight: bold; width: 473px; text-align: center;">THÔNG TIN ĐĂNG NHẬP</h3>
+                    </td>
+                </tr>
+            </table>
+            <div class="row m-3 row-content">
+                <div class="col-md-5 border p-2">UserName:</div>
+                <div class="col-md-6 border p-2" id="uname"></div>
+            </div>
+            <div class="row m-3 row-content">
+                <div class="col-md-5 border p-2">Password:</div>
+                <div class="col-md-6 border p-2" id="pass"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const HoTen = sessionStorage.getItem("HoTen");
+        const Password = sessionStorage.getItem("Password");
+
+        document.getElementById("uname").textContent = HoTen;
+        document.getElementById("pass").textContent = Password;
+    </script>
+</body>
+</html>

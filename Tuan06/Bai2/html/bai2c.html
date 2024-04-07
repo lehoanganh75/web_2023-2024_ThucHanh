@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bai 2b</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+	<style>
+        #ketqua {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-8">
+			<span>Chọn loại cafe :</span>
+			<div class="row m-3">
+				<div class="col-md-4">
+					<input type="checkbox" id="trungnguyen" class="checkbox" value="Trung Nguyen">
+				<label for="trungnguyen">Trung Nguyen</label>
+				</div>
+			</div>
+			<div class="row m-3">
+				<div class="col-md-4">
+					<input type="checkbox" id="mekong" class="checkbox" value="Me Kong">
+					<label for="mekong">Me Kong</label>
+				</div>
+			</div>
+			<div class="row m-3">
+				<div class="col-md-4">
+					<input type="checkbox" id="newlife" class="checkbox" value="New Life">
+					<label for="newlife">New Life</label>
+				</div>
+			</div>
+			<div class="row m-3">
+				<div class="col-md-4">
+					<input type="checkbox" id="oceanblue" class="checkbox" value="Ocean Blue">
+					<label for="oceanblue">Ocean Blue</label>
+				</div>
+			</div>
+			<div class="row m-3">
+				<div class="col-md-4">
+					<input type="checkbox" id="bluespace" class="checkbox" value="Blue Space">
+					<label for="bluespace">Blue Space</label>
+				</div>
+			</div>
+			<div class="row m-3">
+				<div class="col-md-4">
+					<input type="checkbox" id="windows" class="checkbox" value="Windows">
+					<label for="windows">Windows</label>
+				</div>
+			</div>
+			<div class="row m-3">
+				<div class="col-md-4">
+					<input type="button" value="Chon" onclick="checkbox()">
+				</div>
+			</div>
+			<span>Bạn chọn cafe: </span>
+			<span id="ketqua"></span>	
+		</div>
+	</div>
+
+    <script>
+        function checkbox(){
+			let s = document.getElementsByClassName("checkbox");
+			let display=[];
+			for(let i=0; i<s.length;i++){
+				if(s[i].checked){
+					display.push(s[i].value);
+				}
+			}
+			document.getElementById("ketqua").textContent=display.join(", ");
+		}
+    </script>
+</body>
+</html>
