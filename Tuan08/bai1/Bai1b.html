@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Facebook</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+<body>
+    <div class="container">
+    	<div class="row" style="background-color: rgb(61, 61, 158);">
+			<div class="col-md-7">
+				<h1 class="text-white mt-2">Facebook</h1>
+			</div>
+			<div class="col-md-2">
+				<form action="">
+					<label for="mailorsdt" style="color: white; font-size: 14px">Email hoặc điện thoại</label>
+					<input type="text" id="mailorsdt" size="17" style="height: 20px">
+					<input type="checkbox">
+					<label for="" style="color: rgb(192, 183, 183); font-size: 13px">Duy trì đăng nhập</label>
+				</form>
+			</div>
+        	<div class="col-md-2">
+        		<form action="">
+            		<label for="mk" style="color: white; font-size: 14px">Mật khẩu</label>
+            		<input type="text" id="mk" size="17" style="height: 20px">
+            		<a href="#" style="color: rgb(192, 183, 183); font-size: 13px">Quên mật khẩu ?</a>
+          		</form>
+        	</div>
+        	<div class="col-md-1 mt-1">
+        		<button type="submit" style="font-size: 13px; height: 20px; width: 83px; margin: 29px 0px 0px -10px; background-color: rgb(104, 131, 166); color: rgb(231, 231, 231);"><b><p style="margin-top: -5px">Đăng nhập</p></b></button>
+        	</div>
+    	</div>
+      	<div class="row" style="background-color: rgb(231, 231, 249)">
+        	<div class="col-md-5">
+          		<img src="../img/bg.jpg" alt="img" width="370px" />
+        	</div>
+			<div class="col-md-7">
+				<h1>Đăng ký</h1>
+				<br>
+				<p><b> Miễn phí và sẽ luôn như vậy</b></p>
+				<form action="">
+					<div class="row m-2">
+						<div class="col-md-4">
+							<input type="text" id="ho" placeholder="Họ">
+							<span id="errHo" class="text-danger font-italic mx-auto"></span>
+						</div>
+						<div class="col-md-6">
+							<input type="text" id="ten" placeholder="Tên">
+							<span id="errten" class="text-danger font-italic"></span>
+						</div>
+					</div>
+					<div class="row m-2 pl-3">
+						<input type="text" id="mail" placeholder="Email đăng nhập" size="49">
+						<span id="errmail" class="text-danger font-italic"></span>
+					</div>
+					<div class="row m-2 pl-3">
+						<input type="text" id="agmail" placeholder="Nhập lại Email" size="49">
+						<span id="erragmail" class="text-danger font-italic"></span>
+					</div>
+					<div class="row m-2 pl-3">
+						<input type="password" id="pw" placeholder="Mật khẩu" size="49">
+						<span id="errpw" class="text-danger font-italic"></span>
+					</div>
+					<div class="row m-2 pl-3">
+						<input type="text" id="birth" placeholder="Năm sinh" size="49">
+					<span id="errbirth" class="text-danger font-italic"></span>
+					</div>
+					<div class="row ml-4">
+						<button type="button" class="btn btn-success" onclick="validSubmit()" style="width: 200px;">Đăng ký</button>
+					</div>
+				</form>
+			</div>
+    	</div>
+    	<div class="row" style="background-color: rgb(231, 231, 249)">
+        	<div class="col-md-12">
+          		<p><b>Chúng tôi mong sớm gặp lại bạn.</b></p>
+        	</div>
+      	</div>
+    </div>
+
+	<script>
+		function dangky() {
+			let ho = document.getElementById("ho").value;
+			let hoPattern = /^[A-Z][a-z]{1,}$/;
+			if (!hoPattern.test(ho)) {
+				document.getElementById("errHo").textContent = "Họ không hợp lệ";
+				return false;
+		  	}else{
+				document.getElementById("errHo").textContent = "";
+			}
+  
+			let ten = document.getElementById("ten").value;
+			let tenPattern = /^[A-Z][a-z]{1,}$/;
+			if (!tenPattern.test(ten)) {
+				document.getElementById("errten").textContent = "Tên không hợp lệ";
+				return false;
+		  	}else{
+				document.getElementById("errten").textContent = "";
+			}
+  
+		  	let mail = document.getElementById("mail").value;
+		  	let mailPattern = /^[A-Za-z0-9]{1,}\@gmail\.com$/;
+		  	if (!mail && !mailPattern.test(mail)) {
+				document.getElementById("errmail").textContent = "Không đúng định dạng";
+				return false;
+		  	}else{
+				document.getElementById("errmail").textContent = "";
+			}
+  
+		  	let agmail = document.getElementById("agmail").value;
+		  	if (agmail != mail) {
+				document.getElementById("erragmail").textContent = "Không trùng khớp";
+				return false;
+		  	}else{
+				document.getElementById("erragmail").textContent = "";
+			}
+
+		  	let pw = document.getElementById("pw").value;
+		  	let pwPattern = /^[A-Za-z]{1,}[0-9]{1,}$/;
+		  	if (!pwPattern.test(pw)) {
+				document.getElementById("errpw").textContent = "Ít nhất 6 kí tự gồm chữ và số";
+				return false;
+		  	} else{
+				document.getElementById("errpw").textContent = "";
+			}
+
+		  	let namsinh = document.getElementById("birth").value;
+		  	if (namsinh.trim() == "" || parseInt(namsinh) >= 2002) {
+				document.getElementById("errbirth").textContent = "(bắt buộc và nhỏ hơn 2002)";
+				return false;
+		  	}else{
+				document.getElementById("errbirth").textContent = "";
+			}
+
+		  	alert("Đăng ký thành công!");
+		}
+	  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 2</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container text-left">
+      <div class="row">
+        <table class="table-hover table-bordered" style="width: 70%">
+          <thead class="thead-dark">
+            <tr style="text-align: center">
+              <th>STT</th>
+              <th>Hình ảnh</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+            </tr>
+          </thead>
+          <tbody id="sanpham"></tbody>
+          <tfoot>
+            <tr class="font-weight-bold" style="height: 50px">
+              <td></td>
+              <td></td>
+              <td>Tổng thành tiền:</td>
+              <td id="tongtien"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      let i = 0;
+      let sp1 = { hinhanh: "../img/lion.jpg", soluong: 20, dongia: 20000 };
+      let sp2 = { hinhanh: "../img//cat.jpg", soluong: 5, dongia: 40000 };
+      let sp3 = { hinhanh: "../img//bird1.jpg", soluong: 10, dongia: 50000 };
+      let sp4 = { hinhanh: "../img//Rhino.jpg", soluong: 14, dongia: 600000 };
+	    let sp5 = { hinhanh: "../img//panda.jpg", soluong: 20, dongia: 700000 };
+      let sp6 = { hinhanh: "../img//sheep.jpg", soluong: 13, dongia: 800000 };
+      let dssp = [sp1, sp2, sp3, sp4, sp5, sp6];
+      function napDSSP(dssp) {
+        dssp.forEach((sp) => {
+          let row =
+            "<tr><td class='text-center'>" +
+            ++i +
+            "</td><td class='text-center' width='300'><img src='" +
+            sp.hinhanh +
+            "' width='200' ></td><td>" +
+            sp.dongia +
+            "</td><td contenteditable='true' onkeyup='getTongtien()' class='text-left'>" +
+            sp.soluong +
+            "</td></tr>";
+
+          let myTable = document.getElementById("sanpham");
+          let newRow = myTable.insertRow(myTable.rows.length);
+          newRow.innerHTML = row;
+        });
+      }
+
+      function getTongtien() {
+        let tong = 0;
+        let myTable = document.getElementById("sanpham");
+        let rows = myTable.rows.length;
+        for (let i = 0; i < rows; i++) {
+          let soluong = myTable.rows[i].cells[2].textContent;
+          let dongia = myTable.rows[i].cells[3].textContent;
+          let thanhtien = soluong * dongia;
+
+          tong += thanhtien;
+        }
+
+        document.getElementById("tongtien").innerHTML = tong;
+      }
+
+      window.onload = function () {
+        napDSSP(dssp);
+        getTongtien();
+      };
+    </script>
+
+  </body>
+</html>

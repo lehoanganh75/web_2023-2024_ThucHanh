@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="text-center">Đăng ký tài khoản</h2>
+            </div>
+            <div class="panel-body text-center">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col text-right">
+                            <label for="usr">Tên đăng nhập:</label>
+                        </div>
+                        <div class="col">
+                            <input required="true" type="text" class="form-control" id="tenDn" placeholder="txtDN">
+                        </div>
+                        <div class="col text-left">
+                            <span id="err_tenDn" style="color: red;">*</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col text-right">
+                            <label for="email">Mật khẩu:</label>
+                        </div>
+                        <div class="col">
+                            <input required="true" type="email" class="form-control" id="password" placeholder="txtMK">
+                        </div>
+                        <div class="col text-left">
+                            <span id="err_password" style="color: red;">*</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col text-right">
+                            <label for="birthday">Nhập lại mật khẩu:</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="re-password" placeholder="txtNMK">
+                        </div>
+                        <div class="col text-left">
+                            <span id="err_re-password" style="color: red;">*</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h2 class="text-center">THÔNG TIN CÁ NHÂN</h2>
+            </div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col text-right">
+                            <label for="ten">Họ và tên:</label>
+                        </div>
+                        <div class="col">
+                            <input required="true" type="text" class="form-control" id="name" placeholder="txtName">
+                        </div>
+                        <div class="col text-left">
+                            <span id="err_name" style="color: red;">*</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col text-right">
+                            <label for="birthday">Ngày sinh:</label>
+                        </div>
+                        <div class="col">
+                            <input type="date" class="form-control" id="birthday">
+                        </div>
+                        <div class="col text-left">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col text-right">
+                            <label for="birthday">Giới tính:</label>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-2 text-right">
+                                    <input type="radio" name="group" id="gioitinh" value="Nam">
+                                </div>
+
+                                <div class="col-2">
+                                    <label for="nam">Nam</label>
+                                </div>
+
+                                <div class="col-2 text-right">
+                                    <input type="radio" name="group" id="gioitinh" value="Nữ">
+                                </div>
+
+                                <div class="col-2">
+                                    <label for="nu">Nữ</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-left">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col text-right">
+                            <label for="dc">Địa chỉ:</label>
+                        </div>
+                        <div class="col">
+                            <input required="true" type="text" class="form-control" id="address" placeholder="txtDC">
+                        </div>
+                        <div class="col text-left">
+                            <span id="err_address" style="color: red;">*</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col text-right">
+                            <label for="dt">Điện thoại:</label>
+                        </div>
+                        <div class="col">
+                            <input required="true" type="text" class="form-control" id="phone" placeholder="txtDT">
+                        </div>
+                        <div class="col text-left">
+                            <span id="err_phone" style="color: red;">*</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col text-right">
+                            <label for="usr">Email:</label>
+                        </div>
+                        <div class="col">
+                            <input required="true" type="text" class="form-control" id="email" placeholder="txtEmail">
+                        </div>
+                        <div class="col text-left">
+                            <span id="err_email" style="color: red;">*</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button text-center">
+                    <button class="btn btn-primary">Đăng ký</button>
+                    <button class="btn btn-primary">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#tenDn").blur(function(e) {
+            e.preventDefault();
+            let tendangnhap = $("#tenDn").val();
+            let reg_tendangnhap = /^[a-zA-Z]*[0-9]*[!@#$%^&*()]*[^\s]$/;
+            if(!reg_tendangnhap.test(tendangnhap)){
+                $("#err_tenDn").html("Tên đăng nhập bắt đầu là ký tự, có hoặc không có ký tự số, ký tự đặc biệt và không được có khoảng trắng");
+            }else{
+                $("#err_tenDn").html("");
+            }
+        });
+
+        $("#password").blur(function(e) {
+            e.preventDefault();
+            let matkhaudangnhap = $("#password").val();
+            let reg_mk = /^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*()]).{8,}$/;
+
+            if(!reg_mk.test(matkhaudangnhap)){
+                $("#err_password").html("Mật khẩu từ 8 ký tự trở lên, có ít nhất 1 ký tự số, 1 ký tự in hoa, 1 ký tự đặc biệt");
+            }else{
+                $("#err_password").html("");
+            }
+            
+        });
+
+        $("#re-password").blur(function() {
+            let matkhaudangnhap = $("#password").val();
+            let reg_mk = new RegExp($("#password").val());
+            if(!reg_mk.test($(this).val())){
+                $("#err_re-password").html("Mật khẩu không trùng khớp");
+            } else {
+                $("#err_re-password").html("");
+            }
+        });
+
+        $("#name").blur(function(){
+            let hoten = $("#name").val();
+            let reg_hoten = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
+
+            if(!reg_hoten.test(hoten)){
+                $("#err_name").html("Kí tự đầu là kí tự Hoa");
+            }else{
+                $("#err_name").html("");
+            }
+        });
+
+        $("#address").blur(function(){
+            let diachi = $("#address").val();
+
+            if(!diachi){
+                $("#err_address").html("bắt buộc");
+            }else{
+                $("#err_address").html("");
+            }
+        });
+
+
+        $("#phone").blur(function(){
+            let phone = $("#phone").val();
+            let reg_phone = /^(09|03|07|05|06|04)*\d{8}$/;
+
+            if(!reg_phone.test(phone)){
+                $("#err_phone").html("phải là số");
+            }else{
+                $("#err_phone").html("");
+            }
+        });
+
+        $("#email").blur(function(){
+            let email = $("#email").val();
+            let reg_email = /^\w+[!@#$%^&*()]*(@gmail.com)$/;
+
+            if(!reg_email.test(email)){
+                $("#err_email").html("nhập đúng địa chỉ email");
+            }else{
+                $("#err_email").html("");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

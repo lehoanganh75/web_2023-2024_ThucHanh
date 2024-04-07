@@ -1,0 +1,7 @@
+header{
+    height: 180px;
+    background-image: url("/img/banner_car.jpg");
+    mask-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 5px;
+}
